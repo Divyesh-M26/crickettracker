@@ -1,280 +1,126 @@
-import csv
+# 🏏 Cricket AI Analytics Dashboard
 
-import os
+An interactive Streamlit-based Cricket Analytics + Machine Learning project that analyzes player performance using real match data, visualizations, and predictive modeling.
 
-import matplotlib.pyplot as plt
+---
 
+## 🚀 Features
 
+- 📊 Player performance dashboard  
+- 🟢 Single player analytics mode  
+- 🔵 Player comparison mode  
+- 📈 Runs per match visualization  
+- 🤖 Machine Learning performance prediction  
+- 📉 Batting average & strike rate calculations  
+- 🏆 Performance classification (Elite / Average / Developing)  
+- 🎛 Interactive Streamlit web UI  
 
-FILE\_NAME = "matches.csv"
+---
 
+## 🧠 Tech Stack
 
+- Python  
+- Streamlit  
+- NumPy  
+- Matplotlib  
+- Scikit-learn (Random Forest Classifier)  
+- CSV dataset handling  
 
-\# Create file with correct headers if it doesn't exist
 
-if not os.path.exists(FILE\_NAME):
+## 📊 Dataset Format
 
-&#x20;   with open(FILE\_NAME, "w", newline="") as file:
+Your `matches.csv` should follow this format:(my project example is given below)
 
-&#x20;       writer = csv.writer(file)
+Player	Match	Runs	Balls	Wickets
+divyesh	1	46	32	2
+divyesh	2	72	46	3
+divyesh	3	34	18	2
+divyesh	4	106	62	5
+virat	1	65	23	3
+rohit	1	22	8	0
+virat	2	104	66	0
+virat	3	0	2	2
+dhoni	1	20	23	0
+dhoni	2	40	35	0
+rohit	2	72	35	0
+hardik	1	20	5	3
+hardik	2	65	34	3
+hardik	3	43	22	1
+divyesh	5	0	4	2
+virat	4	89	53	3
+rohit	3	100	59	0
+hardik	4	20	8	4
+rohit	4	79	39	0
 
-&#x20;       writer.writerow(\["Player", "Match", "Runs", "Balls", "Wickets"])
+---
 
+## ⚙️ Installation
 
+Install required libraries:
 
+python -m pip install streamlit scikit-learn numpy matplotlib
 
+---
 
-def add\_match():
+## ▶️ How to Run
 
-&#x20;   player = input("Player Name: ")
+Run the Streamlit app:
 
-&#x20;   match = input("Match Number: ")
+python -m streamlit run cricket_app.py
 
-&#x20;   runs = int(input("Runs Scored: "))
+---
 
-&#x20;   balls = int(input("Balls Faced: "))
+## 🧪 How It Works
 
-&#x20;   wickets = int(input("Wickets Taken: "))
+### 📊 Data Processing
+- Reads match-wise player data
+- Calculates:
+  - Strike Rate
+  - Impact Score
+  - Performance metrics
 
+---
 
+### 🤖 Machine Learning Model
+- Algorithm: Random Forest Classifier  
+- Features used:
+  - Runs  
+  - Balls faced  
+  - Wickets  
+  - Strike Rate  
+  - Impact Score  
 
-&#x20;   with open(FILE\_NAME, "a", newline="") as file:
+- Output:
+  - 🔥 Elite Performance Player  
+  - ⚠ Average / Developing Player  
 
-&#x20;       writer = csv.writer(file)
+---
 
-&#x20;       writer.writerow(\[player, match, runs, balls, wickets])
+## 🟢 Modes
 
-
-
-&#x20;   print("✅ Match added successfully!")
-
-
-
-
-
-def show\_stats():
-
-&#x20;   players = {}
-
-
-
-&#x20;   with open(FILE\_NAME, "r") as file:
-
-&#x20;       reader = csv.DictReader(file)
-
-
-
-&#x20;       for row in reader:
-
-&#x20;           player = row\["Player"]
-
-&#x20;           runs = int(row\["Runs"])
-
-&#x20;           balls = int(row\["Balls"])
-
-&#x20;           wickets = int(row\["Wickets"])
-
-
-
-&#x20;           if player not in players:
-
-&#x20;               players\[player] = {
-
-&#x20;                   "runs": 0,
-
-&#x20;                   "balls": 0,
-
-&#x20;                   "wickets": 0,
-
-&#x20;                   "matches": 0
-
-&#x20;               }
-
-
-
-&#x20;           players\[player]\["runs"] += runs
-
-&#x20;           players\[player]\["balls"] += balls
-
-&#x20;           players\[player]\["wickets"] += wickets
-
-&#x20;           players\[player]\["matches"] += 1
-
-
-
-&#x20;   if not players:
-
-&#x20;       print("No data found!")
-
-&#x20;       return
-
-
-
-&#x20;   print("\\n===== PLAYER STATS =====")
-
-
-
-&#x20;   top\_player = ""
-
-&#x20;   best\_runs = 0
-
-
-
-&#x20;   for player, data in players.items():
-
-&#x20;       strike\_rate = (data\["runs"] / data\["balls"]) \* 100 if data\["balls"] > 0 else 0
-
-
-
-&#x20;       print(f"\\nPlayer: {player}")
-
-&#x20;       print("Matches:", data\["matches"])
-
-&#x20;       print("Runs:", data\["runs"])
-
-&#x20;       print("Wickets:", data\["wickets"])
-
-&#x20;       print("Strike Rate:", round(strike\_rate, 2))
-
-
-
-&#x20;       if data\["runs"] > best\_runs:
-
-&#x20;           best\_runs = data\["runs"]
-
-&#x20;           top\_player = player
-
-
-
-&#x20;   print("\\n🏆 Top Performer:", top\_player, "-", best\_runs, "runs")
-
-
-
-
-
-def show\_graph():
-
-&#x20;   matches = \[]
-
-&#x20;   runs = \[]
-
-
-
-&#x20;   with open(FILE\_NAME, "r") as file:
-
-&#x20;       reader = csv.DictReader(file)
-
-
-
-&#x20;       for row in reader:
-
-&#x20;           matches.append(row\["Match"])
-
-&#x20;           runs.append(int(row\["Runs"]))
-
-
-
-&#x20;   if not matches:
-
-&#x20;       print("No data for graph!")
-
-&#x20;       return
-
-
-
-&#x20;   plt.plot(matches, runs, marker="o")
-
-&#x20;   plt.title("Runs per Match")
-
-&#x20;   plt.xlabel("Match")
-
-&#x20;   plt.ylabel("Runs")
-
-&#x20;   plt.grid()
-
-&#x20;   plt.show()
-
-
-
-
-
-def reset\_data():
-
-&#x20;   confirm = input("Are you sure you want to delete all data? (yes/no): ")
-
-
-
-&#x20;   if confirm.lower() == "yes":
-
-&#x20;       with open(FILE\_NAME, "w", newline="") as file:
-
-&#x20;           writer = csv.writer(file)
-
-&#x20;           writer.writerow(\["Player", "Match", "Runs", "Balls", "Wickets"])
-
-&#x20;       print("✅ Data reset successful!")
-
-&#x20;   else:
-
-&#x20;       print("Cancelled.")
-
-
-
-
-
-while True:
-
-&#x20;   print("\\n=== CRICKET PERFORMANCE TRACKER ===")
-
-&#x20;   print("1. Add Match")
-
-&#x20;   print("2. Show Stats")
-
-&#x20;   print("3. Show Graph")
-
-&#x20;   print("4. Reset Data")
-
-&#x20;   print("5. Exit")
-
-
-
-&#x20;   choice = input("Choose option: ")
-
-
-
-&#x20;   if choice == "1":
-
-&#x20;       add\_match()
-
-
-
-&#x20;   elif choice == "2":
-
-&#x20;       show\_stats()
-
-
-
-&#x20;   elif choice == "3":
-
-&#x20;       show\_graph()
-
-
-
-&#x20;   elif choice == "4":
-
-&#x20;       reset\_data()
-
-
-
-&#x20;   elif choice == "5":
-
-&#x20;       print("Goodbye!")
-
-&#x20;       break
-
-
-
-&#x20;   else:
-
-&#x20;       print("Invalid choice!")
+### Single Player Mode
+- Individual stats
+- Performance graph
+- ML prediction result
+
+### Compare Mode
+- Compare two players
+- Side-by-side stats
+- Dual performance graph
+
+---
+
+## 📈 Insights
+
+- High strike rate → better performance
+- High runs + wickets → all-rounder impact
+- Consistency matters more than single-match performance
+
+## 👨‍💻 Author
+BY Divyesh .M
+
+Built as a personal AI + sports analytics project exploring:
+- Machine Learning  
+- Data Science  
+- Streamlit web apps  
 
