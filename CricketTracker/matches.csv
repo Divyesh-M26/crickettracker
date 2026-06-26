@@ -1,3 +1,20 @@
-Player,Match,Runs,Balls,Wickets
-divyesh,1,46,23,2
-divyesh,2,87,46,3
+Player	Match	Runs	Balls	Wickets
+divyesh	1	46	32	2
+divyesh	2	72	46	3
+divyesh	3	34	18	2
+divyesh	4	106	62	5
+virat	1	65	23	3
+rohit	1	22	8	0
+virat	2	104	66	0
+virat	3	0	2	2
+dhoni	1	20	23	0
+dhoni	2	40	35	0
+rohit	2	72	35	0
+hardik	1	20	5	3
+hardik	2	65	34	3
+hardik	3	43	22	1
+divyesh	5	0	4	2
+virat	4	89	53	3
+rohit	3	100	59	0
+hardik	4	20	8	4
+rohit	4	79	39	0
