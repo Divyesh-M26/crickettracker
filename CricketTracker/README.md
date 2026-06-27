@@ -67,66 +67,82 @@ Rohit 1 22 8 0
 Dhoni 2 40 35 0  
 Hardik 1 20 5 3
 
-⚙️ How It Works
-📊 Data Processing
+---
+
+## ⚙️ How It Works
+
+### 📊 Data Processing
 
 Reads match-wise player data and calculates:
 
-Strike Rate
-Batting Average
-Impact Score
-Performance metrics
-🤖 Machine Learning Model
+- Strike Rate  
+- Batting Average  
+- Impact Score  
+- Performance metrics  
 
-Algorithm: Random Forest Classifier
+---
+
+### 🤖 Machine Learning Model
+
+Algorithm: Random Forest Classifier  
 
 Features used:
-
-Runs
-Balls faced
-Wickets
-Strike Rate
-Impact Score
+- Runs  
+- Balls faced  
+- Wickets  
+- Strike Rate  
+- Impact Score  
 
 Output:
+- 🔥 Elite Player  
+- ⚠ Average / Developing Player  
+- 🟢 Classification based on overall performance trends  
 
-🔥 Elite Performance Player
-⚠ Average / Developing Player
-🟢 Classification based on overall performance trends
+---
 
-🟢 Modes
+## 🟢 Modes
 
-Single Player Mode
-Individual stats analysis
-Performance graph visualization
-ML prediction result
-Compare Mode
-Compare two players
-Side-by-side stats
-Dual performance graphs
+### Single Player Mode
+- Individual stats analysis  
+- Performance graph visualization  
+- ML prediction result  
 
-📈 Insights
+### Compare Mode
+- Compare two players  
+- Side-by-side stats  
+- Dual performance graphs  
 
-High strike rate improves performance rating
-Consistent performance is more important than single-match peaks
-All-round performance (runs + wickets) increases impact score
-Long-term trends matter more than isolated matches
+---
 
-👨‍💻 Author
+## 📈 Insights
 
-BY Divyesh M P
+- High strike rate improves performance rating  
+- Consistent performance is more important than single-match peaks  
+- All-round performance (runs + wickets) increases impact score  
+- Long-term trends matter more than isolated matches  
+
+---
+
+## 👨‍💻 Author
+
+BY Divyesh M Perabattula  
 
 Built as a personal AI + sports analytics project exploring:
+- Machine Learning  
+- Data Science  
+- Streamlit web apps  
 
-Machine Learning
-Data Science
-Streamlit web apps
-🎯 Project Goal
+---
+
+## 🎯 Project Goal
 
 To explore how Machine Learning can be applied to sports analytics for better understanding of player performance trends and decision-making.
 
-📌 Future Improvements
-Compare multiple ML models (Logistic Regression, XGBoost)
-Add feature importance visualization
-Improve dataset realism with larger datasets
-Add time-series performance trends
+---
+
+## 📌 Future Improvements
+
+- Compare multiple ML models (Logistic Regression, XGBoost)  
+- Add feature importance visualization  
+- Improve dataset realism with larger datasets  
+- Add time-series performance trends  
