@@ -1,126 +1,119 @@
-# 🏏 Cricket AI Analytics Dashboard
+🏏 Cricket AI Analytics Dashboard
 
 An interactive Streamlit-based Cricket Analytics + Machine Learning project that analyzes player performance using real match data, visualizations, and predictive modeling.
 
----
+🎯 Problem Statement
 
-## 🚀 Features
+Cricket player performance is often judged using simple totals like runs or wickets, which fail to capture consistency, impact, and overall contribution across matches.
 
-- 📊 Player performance dashboard  
-- 🟢 Single player analytics mode  
-- 🔵 Player comparison mode  
-- 📈 Runs per match visualization  
-- 🤖 Machine Learning performance prediction  
-- 📉 Batting average & strike rate calculations  
-- 🏆 Performance classification (Elite / Average / Developing)  
-- 🎛 Interactive Streamlit web UI  
+This project builds a data-driven system to analyze player performance using statistical features and machine learning classification.
 
----
+🚀 Features
 
-## 🧠 Tech Stack
+📊 Player performance dashboard
+🟢 Single player analytics mode
+🔵 Player comparison mode
+📈 Runs per match visualization
+🤖 Machine Learning performance prediction
+📉 Batting average & strike rate calculations
+🏆 Performance classification (Elite / Average / Developing)
+🎛 Interactive Streamlit web UI
 
-- Python  
-- Streamlit  
-- NumPy  
-- Matplotlib  
-- Scikit-learn (Random Forest Classifier)  
-- CSV dataset handling  
+🧠 Why Machine Learning?
 
+Machine learning is used to identify patterns in player performance across multiple matches.
 
-## 📊 Dataset Format
+Instead of relying on single-match statistics, the model learns relationships between:
 
-Your `matches.csv` should follow this format:(my project example is given below)
+Runs
+Balls faced
+Wickets
+Strike Rate
+Impact Score
 
-Player	Match	Runs	Balls	Wickets
-divyesh	1	46	32	2
-divyesh	2	72	46	3
-divyesh	3	34	18	2
-divyesh	4	106	62	5
-virat	1	65	23	3
-rohit	1	22	8	0
-virat	2	104	66	0
-virat	3	0	2	2
-dhoni	1	20	23	0
-dhoni	2	40	35	0
-rohit	2	72	35	0
-hardik	1	20	5	3
-hardik	2	65	34	3
-hardik	3	43	22	1
-divyesh	5	0	4	2
-virat	4	89	53	3
-rohit	3	100	59	0
-hardik	4	20	8	4
-rohit	4	79	39	0
+This helps in evaluating overall performance trends rather than isolated performances.
 
----
+🧠 Tech Stack
 
-## ⚙️ Installation
+Python
+Streamlit
+NumPy
+Matplotlib
+Scikit-learn (Random Forest Classifier)
+CSV dataset handling
 
-Install required libraries:
+📊 Dataset Format
 
-python -m pip install streamlit scikit-learn numpy matplotlib
+Your matches.csv should follow this format:
 
----
+Player | Match | Runs | Balls | Wickets
 
-## ▶️ How to Run
+Example:
 
-Run the Streamlit app:
+Divyesh 1 46 32 2  
+Divyesh 2 72 46 3  
+Divyesh 3 34 18 2  
+Virat 1 65 23 3  
+Rohit 1 22 8 0  
+Dhoni 2 40 35 0  
+Hardik 1 20 5 3  
 
-python -m streamlit run cricket_app.py
+⚙️ How It Works
+📊 Data Processing
 
----
+Reads match-wise player data and calculates:
 
-## 🧪 How It Works
+Strike Rate
+Batting Average
+Impact Score
+Performance metrics
+🤖 Machine Learning Model
 
-### 📊 Data Processing
-- Reads match-wise player data
-- Calculates:
-  - Strike Rate
-  - Impact Score
-  - Performance metrics
+Algorithm: Random Forest Classifier
 
----
+Features used:
 
-### 🤖 Machine Learning Model
-- Algorithm: Random Forest Classifier  
-- Features used:
-  - Runs  
-  - Balls faced  
-  - Wickets  
-  - Strike Rate  
-  - Impact Score  
+Runs
+Balls faced
+Wickets
+Strike Rate
+Impact Score
 
-- Output:
-  - 🔥 Elite Performance Player  
-  - ⚠ Average / Developing Player  
+Output:
 
----
+🔥 Elite Performance Player
+⚠ Average / Developing Player
+🟢 Classification based on overall performance trends
+🟢 Modes
+Single Player Mode
+Individual stats analysis
+Performance graph visualization
+ML prediction result
+Compare Mode
+Compare two players
+Side-by-side stats
+Dual performance graphs
+📈 Insights
+High strike rate improves performance rating
+Consistent performance is more important than single-match peaks
+All-round performance (runs + wickets) increases impact score
+Long-term trends matter more than isolated matches
 
-## 🟢 Modes
+👨‍💻 Author
 
-### Single Player Mode
-- Individual stats
-- Performance graph
-- ML prediction result
-
-### Compare Mode
-- Compare two players
-- Side-by-side stats
-- Dual performance graph
-
----
-
-## 📈 Insights
-
-- High strike rate → better performance
-- High runs + wickets → all-rounder impact
-- Consistency matters more than single-match performance
-
-## 👨‍💻 Author
-BY Divyesh .M
+BY Divyesh M P
 
 Built as a personal AI + sports analytics project exploring:
-- Machine Learning  
-- Data Science  
-- Streamlit web apps  
 
+Machine Learning
+Data Science
+Streamlit web apps
+🎯 Project Goal
+
+To explore how Machine Learning can be applied to sports analytics for better understanding of player performance trends and decision-making.
+
+📌 Future Improvements
+Compare multiple ML models (Logistic Regression, XGBoost)
+Add feature importance visualization
+Improve dataset realism with larger datasets
+Add time-series performance trends
