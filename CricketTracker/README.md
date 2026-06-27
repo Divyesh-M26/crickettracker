@@ -1,62 +1,71 @@
-🏏 Cricket AI Analytics Dashboard
+# 🏏 Cricket AI Analytics Dashboard
 
-An interactive Streamlit-based Cricket Analytics + Machine Learning project that analyzes player performance using real match data, visualizations, and predictive modeling.
+An interactive Streamlit-based Cricket Analytics and Machine Learning project that analyzes player performance using real match data, statistical features, and predictive modeling.
 
-🎯 Problem Statement
+---
 
-Cricket player performance is often judged using simple totals like runs or wickets, which fail to capture consistency, impact, and overall contribution across matches.
+## 🎯 Problem Statement
 
-This project builds a data-driven system to analyze player performance using statistical features and machine learning classification.
+Cricket player performance is often judged using simple totals like runs or wickets, which fail to capture consistency, impact, and overall contribution across multiple matches.
 
-🚀 Features
+This project builds a data-driven system to analyze player performance more effectively using statistical features and machine learning classification.
 
-📊 Player performance dashboard
-🟢 Single player analytics mode
-🔵 Player comparison mode
-📈 Runs per match visualization
-🤖 Machine Learning performance prediction
-📉 Batting average & strike rate calculations
-🏆 Performance classification (Elite / Average / Developing)
-🎛 Interactive Streamlit web UI
+---
 
-🧠 Why Machine Learning?
+## 🚀 Features
+
+- 📊 Player performance dashboard  
+- 🟢 Single player analytics mode  
+- 🔵 Player comparison mode  
+- 📈 Runs per match visualization  
+- 📉 Batting average & strike rate calculations  
+- 🧠 Feature-based performance evaluation  
+- 🤖 Machine Learning-based player classification  
+- 🏆 Performance categories: Elite / Average / Developing  
+- 🎛 Interactive Streamlit web UI  
+
+---
+
+## 🧠 Why Machine Learning?
 
 Machine learning is used to identify patterns in player performance across multiple matches.
 
 Instead of relying on single-match statistics, the model learns relationships between:
+- Runs  
+- Balls faced  
+- Wickets  
+- Strike Rate  
+- Impact Score  
 
-Runs
-Balls faced
-Wickets
-Strike Rate
-Impact Score
+This helps in evaluating **overall performance trends rather than isolated performances**.
 
-This helps in evaluating overall performance trends rather than isolated performances.
+---
 
-🧠 Tech Stack
+## 🧠 Tech Stack
 
-Python
-Streamlit
-NumPy
-Matplotlib
-Scikit-learn (Random Forest Classifier)
-CSV dataset handling
+- Python  
+- Streamlit  
+- NumPy  
+- Matplotlib  
+- Scikit-learn (Random Forest Classifier)  
+- CSV dataset handling  
 
-📊 Dataset Format
+---
 
-Your matches.csv should follow this format:
+## 📊 Dataset Format
 
-Player | Match | Runs | Balls | Wickets
+The dataset should follow this structure:
+
+Player | Match | Runs | Balls | Wickets  
 
 Example:
-
+```text id="dataset1"
 Divyesh 1 46 32 2  
 Divyesh 2 72 46 3  
-Divyesh 3 34 18 2  
 Virat 1 65 23 3  
 Rohit 1 22 8 0  
 Dhoni 2 40 35 0  
-Hardik 1 20 5 3  
+Hardik 1 20 5 3
 
 ⚙️ How It Works
 📊 Data Processing
@@ -84,7 +93,9 @@ Output:
 🔥 Elite Performance Player
 ⚠ Average / Developing Player
 🟢 Classification based on overall performance trends
+
 🟢 Modes
+
 Single Player Mode
 Individual stats analysis
 Performance graph visualization
@@ -93,7 +104,9 @@ Compare Mode
 Compare two players
 Side-by-side stats
 Dual performance graphs
+
 📈 Insights
+
 High strike rate improves performance rating
 Consistent performance is more important than single-match peaks
 All-round performance (runs + wickets) increases impact score
