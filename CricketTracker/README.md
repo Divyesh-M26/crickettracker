@@ -59,13 +59,13 @@ The dataset should follow this structure:
 Player | Match | Runs | Balls | Wickets  
 
 Example:
-```text id="dataset1"
+
 Divyesh 1 46 32 2  
 Divyesh 2 72 46 3  
 Virat 1 65 23 3  
 Rohit 1 22 8 0  
 Dhoni 2 40 35 0  
-Hardik 1 20 5 3
+Hardik 1 20 5 3  
 
 ---
 
@@ -87,6 +87,7 @@ Reads match-wise player data and calculates:
 Algorithm: Random Forest Classifier  
 
 Features used:
+
 - Runs  
 - Balls faced  
 - Wickets  
@@ -94,6 +95,7 @@ Features used:
 - Impact Score  
 
 Output:
+
 - 🔥 Elite Player  
 - ⚠ Average / Developing Player  
 - 🟢 Classification based on overall performance trends  
@@ -103,11 +105,15 @@ Output:
 ## 🟢 Modes
 
 ### Single Player Mode
+
 - Individual stats analysis  
 - Performance graph visualization  
 - ML prediction result  
 
+---
+
 ### Compare Mode
+
 - Compare two players  
 - Side-by-side stats  
 - Dual performance graphs  
@@ -123,11 +129,21 @@ Output:
 
 ---
 
+## 📌 Future Improvements
+
+- Compare multiple ML models (Logistic Regression, XGBoost)  
+- Add feature importance visualization  
+- Improve dataset realism with larger datasets  
+- Add time-series performance trends  
+
+---
+
 ## 👨‍💻 Author
 
 BY Divyesh M Perabattula  
 
 Built as a personal AI + sports analytics project exploring:
+
 - Machine Learning  
 - Data Science  
 - Streamlit web apps  
@@ -137,12 +153,3 @@ Built as a personal AI + sports analytics project exploring:
 ## 🎯 Project Goal
 
 To explore how Machine Learning can be applied to sports analytics for better understanding of player performance trends and decision-making.
-
----
-
-## 📌 Future Improvements
-
-- Compare multiple ML models (Logistic Regression, XGBoost)  
-- Add feature importance visualization  
-- Improve dataset realism with larger datasets  
-- Add time-series performance trends  
